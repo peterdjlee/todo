@@ -155,5 +155,6 @@ app.post("/auth", function (req, res) {
     res.send("Error 404:")
   })
 })
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000)
+app.listen(PORT)
