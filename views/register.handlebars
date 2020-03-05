@@ -1,0 +1,20 @@
+<form method="POST" action="/user" class="box">
+    <h1>Register</h1>
+    <div class="txtb">
+        <input type="text" name="username">
+        <span data-placeholder="New Username"></span>
+    </div>
+
+    <input type="submit" class="submit-btn" value="Sign up">
+</form>
+
+<script type="text/javascript">
+    $(".txtb input").on("focus", function () {
+        $(this).addClass("focus");
+    });
+
+    $(".txtb input").on("blur", function () {
+        if ($(this).val() == "")
+            $(this).removeClass("focus");
+    });
+</script>

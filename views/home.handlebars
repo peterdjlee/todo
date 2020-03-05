@@ -1,0 +1,24 @@
+<form method="POST" action="/auth"  class="box">
+    <h1>To do</h1>
+    <div class="txtb">
+        <input type="text" name="username">
+        <span data-placeholder="Username"></span>
+    </div>
+
+    <input type="submit" class="submit-btn" value="Sign in">
+
+    <div class="bottom-text">
+        Don't have an account? <a href="/register">Sign up</a>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(".txtb input").on("focus", function () {
+        $(this).addClass("focus");
+    });
+
+    $(".txtb input").on("blur", function () {
+        if ($(this).val() == "")
+            $(this).removeClass("focus");
+    });
+</script>

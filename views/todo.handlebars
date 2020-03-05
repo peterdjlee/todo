@@ -1,0 +1,38 @@
+<div class="box">
+    <h1>To do</h1>
+    <div class="todo">
+        {{#each todo-items}}
+            {{#if deleted}}
+            {{else}}
+                {{#if completed}}
+                    <span class="completed">{{content}}</span>
+                {{else}}
+                    {{content}}
+                {{/if}}
+                    <form method="POST" action="/update-todo-item" style="display: inline-block;">
+                        <input type="hidden" id="item_id" name="item_id" value={{id}}>
+                        <input type="submit" class="small-btn" value="✔️">
+                    </form>
+                    <form method="POST" action="/delete-todo-item" style="display: inline-block;">
+                        <input type="hidden" id="item_id" name="item_id" value={{id}}>
+                        <input type="submit" class="small-btn" value="❌">
+                    </form>
+                    <br>
+            {{/if}}
+        {{/each}}
+    </div>
+
+
+    {{!-- <ul>{{#each todo-items}}<li>{{content}}</li>{{/each}}</ul> --}}
+    <form method="POST" action="/add-todo-item">
+        <div class="txtb">
+            <input type="text" name="todo" placeholder="Add a todo item">
+        </div>
+
+        <input type="submit" class="submit-btn" value="Add">
+
+        <div class="bottom-text">
+            <a href="/logout">Log out</a>
+        </div>
+    </form>
+</div>
