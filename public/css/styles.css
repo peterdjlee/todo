@@ -11,8 +11,6 @@ body {
 }
 
 .box {
-    margin-top: 5%;
-    margin-bottom: 5%;
     width: 360px;
     background: #fff;
     height: fit-content;
