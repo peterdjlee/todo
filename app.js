@@ -23,7 +23,6 @@ app.get("/", function (req, res) {
     axios.get(TODO_API_URL + "/todo-item",
       header
     ).then(function (response) {
-      console.log(response.data)
       res.render("todo", { "todo-items": response.data })
     }).catch(function (error) {
       console.log(error.response.status)
@@ -86,7 +85,6 @@ app.post("/update-todo-item", function (req, res) {
   if (id == '' || id === undefined) {
     res.redirect("/")
   } else {
-    console.log("complete todo item")
     axios({
       method: 'put',
       url: `https://hunter-todo-api.herokuapp.com/todo-item/${id}`,
@@ -99,7 +97,6 @@ app.post("/update-todo-item", function (req, res) {
       }
     })
       .then(function (response) {
-        console.log(req.body.item_id + " completed")
         res.redirect("/");
       })
       .catch(function (error) {
